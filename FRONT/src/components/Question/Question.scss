@@ -1,0 +1,64 @@
+@import "../../style/variables/variables.scss";
+
+
+.questionContainer {
+  @include customContainer(90%, 90%, space-around);
+  background-color: $lightBlueColor;
+  border: 3px solid $blueColor;
+  font-size: 1.8rem;
+  overflow-y: auto;
+  @include custom-scrollbar($blueColor, $lightBlueColor);
+  p{
+    color: $redColor;
+  }
+  h2{
+    text-align: center;
+    color: $orangeColor;
+  }
+  .answerOptionSection {
+    @extend %perfectCenter;
+    flex-wrap: wrap;
+    gap: 10%;
+    width: 100%;
+    height: 40vh;
+    button{
+      width: 40%;
+      height: 40%;
+      @include button($lightBlueColor, $blueColor, 0, 0);
+    }
+  }
+}
+
+@media screen and (max-width: $mediaTablet) {
+  .questionContainer {
+    .answerOptionSection {
+      button{
+        &:hover {
+          background-color: $lightBlueColor;
+          scale: 1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mediaMobile) {
+  .questionContainer {
+    width: 100%;
+    height: 100%;
+    p{
+      font-size: 1.3rem;
+    }
+    .answerOptionSection {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      height: 60%;
+      button{
+        width: 80%;
+        height: 20%;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,159 @@
+@import "../../style/variables/variables.scss";
+
+.recapContainer {
+  height: 100%;
+  width: 80%;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: $lightPinkColor;
+  border: 3px solid $pinkColor;
+  border-radius: 10px;
+  .recapScore {
+    margin-bottom: 1rem;
+    p{
+      font-size: 2rem;
+      margin: 20px 0;
+      color: $orangeColor;
+    }
+  }
+  .recapQuestionsContainer {
+    width: 70%;
+    height: 100%;
+    @extend %perfectCenter;
+    overflow-y: auto;
+    @include custom-scrollbar($pinkColor, $lightPinkColor);
+    ul{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 0 25px;
+      li{
+        border-radius: 10px;
+        color: $whiteColor;
+        padding: 15px 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        &:hover{
+          cursor: pointer;
+        }
+        h3{
+          display: flex;
+          align-items: center;
+          height: 3rem;
+          font-size: 1.4rem;
+          }
+        }
+        .goodAnswer {
+          font-size: 18px;
+          background: white;
+          color: black;
+          padding: 8px 15px;
+          border-radius: 5px;
+        }
+      }
+      .incorrect {
+        border: 3px solid $redColor;
+        background-color: $lightRedColor;
+      }
+      .correct {
+        border: 3px solid $greenColor;
+        background-color: $lightGreenColor;
+      }
+      .no-answer {
+        border: 3px solid $blueColor;
+        background-color: $lightBlueColor;
+      }
+    }
+  }
+    
+  .recapButtonsContainer {
+    height:200px;
+    @extend %perfectCenter;
+    gap: 20px;
+    .recapSaveButton{
+      width: 80px;
+      height: 80px;
+      background-color: $lightOrangeColor;
+      border : 3px solid $orangeColor;
+      border-radius: 50px;
+      &:hover{
+        scale: 1.05;
+        animation: rotate 1s linear infinite;
+        cursor: pointer;
+      }
+    }
+    .recapLikeButton{
+      width: 80px;
+      height: 80px;
+      background-color: $lightBlueColor;
+      border : 3px solid $blueColor;
+      border-radius: 50px;
+      &:hover{
+        scale: 1.05;
+        animation: rotate 1s linear infinite;
+        cursor: pointer;
+      }
+    }
+    .recapDislikeButton{
+      width: 80px;
+      height: 80px;
+      background-color: $lightRedColor;
+      border : 3px solid $redColor;
+      border-radius: 50px;
+      &:hover{
+        scale: 1.05;
+        animation: rotate 1s linear infinite;
+        cursor: pointer;
+      }
+    }
+}
+    .recapReturnButton{
+      @include button($orangeColor, $lightOrangeColor, 15px, 5px 0);
+    }
+  
+
+@media screen and (max-width: $mediaTablet) {
+  .recapContainer {
+    width: 100%;
+    .recapQuestionsContainer {
+      ul{
+        li{
+          h3{
+            height: 4rem;
+            font-size: 1rem;
+          }
+          .goodAnswer {
+            font-size: 1rem;
+          }
+          p{
+            font-size: 1rem;
+          }
+          
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mediaMobile) {
+  .recapContainer {
+    .recapQuestionsContainer {
+      width: 100%;
+      ul{
+        li{
+          h3{
+            height: 5rem;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

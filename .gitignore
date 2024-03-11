@@ -1,0 +1,6 @@
+/FRONT/node_modules/
+/FRONT/.env
+/BACK/node_modules/
+/BACK/.env
+/test/node_modules/
+/BACK/logs/

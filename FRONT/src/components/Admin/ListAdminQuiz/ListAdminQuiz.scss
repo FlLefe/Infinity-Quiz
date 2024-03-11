@@ -1,0 +1,22 @@
+@import "../../../style//variables/variables.scss";
+
+.adminQuizContainer {
+    width: 90%;
+    @extend %adminArray;
+
+    th:first-child, td:first-child {
+        width: 60%;
+    }
+    th:nth-child(2), td:nth-child(2) {
+        width: 10%;
+    }
+    th:nth-child(3), td:nth-child(3) {
+        width: 10%;
+    }
+    th:nth-child(4), td:nth-child(4) {
+        width: 10%;
+    }
+    th:nth-child(5), td:nth-child(5) {
+        width: 10%;
+    }
+}

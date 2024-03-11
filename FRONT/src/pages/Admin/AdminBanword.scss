@@ -1,0 +1,15 @@
+@import "../../style/variables/variables.scss";
+
+.adminContainer{
+    .handleSearch{
+        @extend %perfectCenter;
+        flex-direction: column;
+        height: 20%;
+    }
+    .addBanwordInput{
+        @include input($blueColor);
+    }
+    .addBanwordBtn{
+        @include button($orangeColor, $lightOrangeColor, 10px 20px);
+    }
+}

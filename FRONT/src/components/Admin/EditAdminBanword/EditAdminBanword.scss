@@ -1,0 +1,31 @@
+@import "../../../style/variables/variables.scss";
+
+.adminEditBanwordContainer{
+  @include customContainer(40%, 50%, flex-start);
+  @include custom-scrollbar($blueColor, $lightBlueColor);
+  background-color: $lightBlueColor;
+  border: 3px solid $blueColor;
+  padding: 50px 0;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  .adminEditBanwordCard{
+    @extend %perfectCenter;
+    flex-direction: column;
+    gap: 30px;
+    input{
+      @include input($blueColor);
+    }
+    button:nth-child(3){
+      @include button($orangeColor, $lightOrangeColor, 10px 20px, 0);
+    }
+    button:nth-child(4){
+      @include button($orangeColor, $lightOrangeColor, 10px 20px, 0);
+    }
+  }
+  a{
+    button{
+      @include button($redColor, $lightRedColor, 10px 20px, 40px);
+    }
+  }
+}

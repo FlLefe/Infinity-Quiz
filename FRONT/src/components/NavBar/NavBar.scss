@@ -1,0 +1,171 @@
+@import "../../style/variables/variables.scss";
+
+
+.navBar {
+  height: 6%;
+  .menu-links{
+    width: 100%;
+    height: 100%;
+    background: $whiteColor;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.4rem;
+    .logoSvg {
+      height: 80%;
+      display: flex;
+      align-items: center;
+      img{
+        width: 75px;
+        height: 50px;
+      }
+    }
+    .active {
+      text-decoration: underline;
+      text-underline-offset: 0.4em;
+      text-decoration-thickness: 2px;
+      text-decoration-skip-ink:none;
+    }
+  
+    a:hover {
+      color:$redColor;
+      scale: 1.05;
+    }
+  
+    .navProfile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3px;
+      .navBarPicture {
+        margin-left: 10px;
+        height: 25px;
+        width: auto;
+      }
+    }
+  }
+  
+}
+
+.menu-burger {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .navBar{
+    height: 0%;
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: $backgroundColor1;
+    z-index: 999;
+    .navLink {
+      margin: 10px 0;
+      color: $whiteColor;
+    }
+    .logoSvg{
+      width: 80px;
+      height: 80px;
+      filter: invert(100%);
+    }
+    .active{
+      color: $orangeColor;
+    }
+  }
+
+  
+}
+.navBar.open .menu-links {
+  display: flex;
+  justify-content: center;
+  row-gap: 20px;
+}
+.menu-burger {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+  padding: 10px;
+  border: 2px solid $orangeColor;
+  border-radius: 30px;
+  background-color: black;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @media screen and (max-width: 700px) {
+//   .burgerTest {
+//     display: flex;
+//     position: absolute;
+//     top: 5px;
+//     right: 5px;
+//     width: 2.5vh;
+//     height: 2.5vh;
+//     background: rgba(45, 123, 85, 0.945);
+//     border-radius: 3px;
+//     transition: 1s;
+//     &.isActive {
+//       right: 91vw;
+//     }
+//   }
+//   .navBar {
+//     position: absolute;
+//     opacity: 0;
+//     width: 90vw;
+//     height: 0;
+//     display: none;
+//     right: -90vw;
+//     &.isActive {
+//       opacity: 1;
+//       display: flex;
+//       justify-content: flex-start;
+//       align-items: flex-end;
+//       gap: 50px;
+//       flex-direction: column;
+//       position: absolute;
+//       z-index: 3;
+//       right: 0;
+//       font-size: 28px;
+//       height: 100vh;
+//       width: 90vw;
+//       background: rgba(45, 123, 85, 0.945);
+//       padding-right: 20px;
+//       padding-top: 20px;
+//       animation: go;
+//       .logoSvg {
+//         height: 70px;
+//         width: 100px;
+//       }
+//       a {
+//         color: black;
+//       }
+//       .active {
+//         text-decoration: underline;
+//       }
+//       .navProfile {
+//         display: flex;
+//         justify-content: center;
+//         gap: 3px;
+//         .navBarPicture {
+//           height: 18px;
+//           width: auto;
+//         }
+//       }
+//     }
+//   }
+// }

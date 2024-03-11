@@ -1,0 +1,149 @@
+//// ! ------------------  SCSS Variables ------------------ ////
+
+$backgroundColor1:#0A0829;
+$backgroundColor: rgba(255, 255, 255, 0.1);
+
+$pinkColor: #BE2EDD;
+$lightPinkColor: #BE2EDD33;
+$blueColor: #596FFF;
+$lightBlueColor: #596FFF33;
+$redColor: #c42525;
+$lightRedColor: #8d0e0c5a;
+$orangeColor: #F0932B;
+$lightOrangeColor: #de892751;
+$greenColor: #70FF33;
+$lightGreenColor: #50d11868;
+$greyColor: #323131d1;
+$blackColor: #0e0e0f;
+$whiteColor: #ffffff;
+
+$mediaTablet: 900px;
+$mediaMobile: 600px;
+
+//// ! ------------------  SCSS Mixins ------------------ ////
+
+@mixin customContainer($width, $height, $justify) {
+  width: $width;
+  height: $height;
+  background: none;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding: 2%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: $justify;
+  //si rienb space-around
+}
+
+
+@mixin button($backgroungColor, $borderColor, $padding: 10px, $margin: 30px 0) {
+  color: $whiteColor;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin: $margin;
+  border-radius: 10px;
+  border: 3px solid $backgroungColor;
+  padding: $padding;
+  background-color: $backgroungColor;
+  transition: 0.2s;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: $borderColor;
+    scale: 1.05;
+  }
+}
+
+@mixin input($borderColor){
+  border-bottom: 3px solid $borderColor;
+  color: $whiteColor;
+  text-align: center;
+  width: 60%;
+  height: 3rem;
+  font-size: 1.5rem;
+  &:placeholder{
+    color: $whiteColor;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+@mixin custom-scrollbar ($color, $colorBackground) {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $colorBackground;
+    border-radius: 20px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $color; 
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+}
+
+//// ! ------------------  SCSS Placeholder ------------------ ////
+
+%perfectCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%rowCenterWrap{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+%adminArray {
+  border-collapse: collapse;
+  text-align: center;
+  tr {
+      width: 100%;
+  }
+  th, td {
+      border: 1px solid $whiteColor;
+      padding: 8px;
+  }
+  th {
+    background-color: $lightBlueColor;
+    font-weight: bold;
+  }
+  tbody tr:nth-child(even) {
+      background-color: $blueColor;
+  }
+  tbody tr:hover {
+      background-color: $greyColor;
+  }
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  25% {
+      transform: rotate(-30deg);
+  }
+  50% {
+      transform: rotate(0deg);
+  }
+  75% {
+      transform: rotate(30deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}

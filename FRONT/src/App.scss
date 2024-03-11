@@ -1,0 +1,70 @@
+@use "./style/reset";
+@import "./style/variables/variables.scss";
+
+@font-face {
+  font-family: "font1";
+  src: url(./style/assets/font/Roboto-Medium.ttf) format('truetype');
+}
+
+body {
+  font-family: font1, sans-serif;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
+.mainContainer{
+  height: 94%;
+  width: 100%;
+  background: $backgroundColor1;
+  color: $whiteColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.adminContainer{
+@include customContainer(80%, 85%, flex-start);
+  background-color: $lightBlueColor;
+  overflow-y: auto;
+  @include custom-scrollbar($blueColor, $lightBlueColor);
+  h2 {
+    color: $whiteColor;
+    font-size: 2rem;
+    margin-bottom: 20px
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .mainContainer{
+    height: 100%;
+    padding-bottom: 10px;
+    button:hover {
+      background-color: initial;
+      scale: 1;
+    }
+  }
+}
+
+.custom-toast-container {
+  margin-top: 50px;
+  margin-right: 100px;
+}
+
+.Toastify__toast {
+  font-size: 20px;
+  width: 400px;
+  height: 80px;
+}
+
+@media screen and (max-width: $mediaMobile) {
+  .Toastify__toast {
+    width: 200px;
+    height: 120px;
+  }
+}
+
+

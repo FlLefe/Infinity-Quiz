@@ -1,0 +1,11 @@
+@import "../../../style/variables/variables.scss";
+
+.adminNavBar {
+    @extend %perfectCenter;
+    height: 80px;
+    margin: 20px;
+    gap: 30px;
+    a{
+        @include button($redColor, $lightRedColor, 10px 20px, 0); 
+    }
+}

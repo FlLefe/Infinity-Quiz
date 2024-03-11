@@ -1,0 +1,102 @@
+@import "../../style/variables/variables.scss";
+
+.quizDbContainer {
+  @include customContainer(40%, 90%, space-between);
+  background-color: $lightPinkColor;
+  border: 3px solid $pinkColor;
+  font-size: 1.5rem;
+  overflow-y: auto;
+  @include custom-scrollbar($pinkColor, $lightPinkColor);
+  .quizDbDetails{
+    @extend %perfectCenter;
+    flex-direction: column;
+    gap: 35px;
+  }
+  h2{
+    color: $orangeColor;
+    font-size: 2rem;
+  }
+  p:nth-child(2){
+    color: $greenColor;
+  }
+  p:nth-child(3){
+    color: $redColor;
+  }
+  .quizDbPicture{
+    width: 100px;
+    height: 100px;
+  }
+  .quizDbButtons{
+    @extend %perfectCenter;
+    gap: 20px;
+    img{
+      margin-left: 10px;
+    }
+    button:nth-child(1){
+      @include button($orangeColor, $lightOrangeColor, 10px 10px,0 20px 0 0);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      color: $whiteColor;
+      &:hover{
+        color: $whiteColor;
+      }
+    }
+    button:nth-child(2){
+      @include button($orangeColor, $lightOrangeColor, 10px 10px);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      color: $whiteColor;
+      &:hover{
+        color: $whiteColor;
+      }
+    }
+    span {
+      color: $greenColor;
+    }
+  }
+  a{
+    @include button($redColor, $lightRedColor, 10px 20px);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+
+  .quizDbContainer {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: $mediaTablet) {
+
+  .quizDbContainer {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: $mediaMobile) {
+
+  .quizDbContainer {
+    width: 95%;
+    .quizDbDetails{
+      width: 100%;
+      h2{
+        text-align: center;
+        word-wrap: break-word;
+        font-size: 1.2rem;
+      }
+      height: 100%;
+    }
+      .quizDbButtons{
+        margin-top: 10px;
+        flex-direction: column;
+        button:nth-child(1){
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+

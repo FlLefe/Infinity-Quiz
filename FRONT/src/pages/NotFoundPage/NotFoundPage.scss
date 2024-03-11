@@ -1,0 +1,11 @@
+@import "../../style/variables/variables.scss";
+
+.notFoundContainer{
+    @include customContainer(100%, 100%, space-around);
+    img {
+        max-width: 80vw;
+        max-height: 80vh;
+        border: 3px solid $blueColor;
+        border-radius: 10px;
+    }
+}

@@ -1,0 +1,34 @@
+@import "../../style/variables/variables.scss";
+
+.timer {
+  @extend %perfectCenter;
+  margin-top: 15px;
+  width: 150px;
+  height: 80px;
+  color: $redColor;
+  border: 3px solid $redColor;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 4rem;
+  background-color: $lightRedColor;
+  img{
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.quizManagerContainer {
+  @include customContainer(90%, 90%, space-around);
+}
+
+@media screen and (max-width: $mediaMobile) {
+  .timer{
+    width: 100px;
+    height: 50px;
+    font-size: 2rem;
+    img{
+      width: 25px;
+      height: 25px;
+    }
+  }
+}

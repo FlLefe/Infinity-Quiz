@@ -1,0 +1,25 @@
+@import "../../style/variables/variables.scss";
+
+.aboutContainer {
+  @include customContainer(70%, 90%, space-around);
+  font-size: 2rem;
+  font-family: Georgia, serif;
+  :nth-child(1){
+    color:$orangeColor;
+    font-weight: bold  ;
+  }
+  :nth-child(4){
+    text-align: center;
+  }
+  .citation {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: right;
+    font-style: italic;
+  }  
+}
+
+@media screen and (max-width: $mediaMobile) {
+  .aboutContainer {
+    font-size: 1.5rem;    
+  }
+}

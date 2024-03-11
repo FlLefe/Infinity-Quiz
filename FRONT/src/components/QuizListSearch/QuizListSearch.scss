@@ -1,0 +1,103 @@
+@import "../../style/variables/variables.scss";
+
+.QuizListSearchContainer {
+    @extend %perfectCenter;
+    min-width: 600px;
+    height:100px;
+    position: relative;
+    .searchBar{
+      font-size: 1.6rem;
+      padding-left: 20px;
+      height: 60px;
+      width: 75%;
+      border: 3px solid $pinkColor;
+      border-radius: 10px;
+      background-color: $lightPinkColor;
+      color: $whiteColor;
+
+      &::placeholder {
+        color: $whiteColor;
+        font-size: 1.6rem;
+      }
+    }
+    .clearButton {
+      position: relative;
+      right: 0;
+      margin-left: 20px;
+      height: 60px;
+      width: 60px;
+      background-color: $lightRedColor;
+      border: 3px solid $redColor;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+}
+
+@media screen and (max-width: $mediaTablet) {
+  .searchBarContainer {
+    min-width: 500px;
+    height:100px;
+    position: relative;
+    .searchBar{
+      font-size: 1.6rem;
+      padding-left: 20px;
+      height: 60px;
+      width: 75%;
+      border: 3px solid $pinkColor;
+      border-radius: 10px;
+      background-color: $lightPinkColor;
+      color: $whiteColor;
+
+      &::placeholder {
+        color: $whiteColor;
+        font-size: 1.6rem;
+      }
+    }
+    .clearButton {
+      position: relative;
+      right: 0;
+      margin-left: 20px;
+      height: 60px;
+      width: 60px;
+      background-color: $lightRedColor;
+      border: 3px solid $redColor;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+}
+}
+
+@media screen and (max-width: $mediaMobile) {
+  .searchBarContainer {
+    min-width: 250px;
+    max-width: 300px;
+    height:100px;
+    position: relative;
+    .searchBar{
+      font-size: 1.6rem;
+      padding-left: 20px;
+      height: 60px;
+      width: 75%;
+      border: 3px solid $pinkColor;
+      border-radius: 10px;
+      background-color: $lightPinkColor;
+      color: $whiteColor;
+
+      &::placeholder {
+        color: $whiteColor;
+        font-size: 1.6rem;
+      }
+    }
+    .clearButton {
+      position: relative;
+      right: 0;
+      margin-left: 20px;
+      height: 60px;
+      width: 60px;
+      background-color: $lightRedColor;
+      border: 3px solid $redColor;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+}
+}

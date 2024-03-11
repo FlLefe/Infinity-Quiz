@@ -1,0 +1,8 @@
+@import "../../style/variables/variables.scss";
+
+.handleSearch{
+  @extend %perfectCenter;
+  flex-direction: column;
+  height: 20%;
+}
+

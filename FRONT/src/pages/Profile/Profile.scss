@@ -1,0 +1,167 @@
+@import "../../style/variables/variables.scss";
+
+  .profileContainer {
+    @include customContainer(40%, 90%, space-between);
+    background-color: $lightBlueColor;
+    border: 3px solid $blueColor;
+    padding: 50px 0;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    @include custom-scrollbar($blueColor, $lightBlueColor);
+    p{
+      margin: 10px 0;
+    }
+    h1{
+      color: $whiteColor;
+      font-size: 2rem;
+    }
+    img{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    .profilePagePicture{
+      width: 150px;
+      height: 150px;
+    }
+    .profilePictureContainer{
+      width: 100%;
+      height: auto;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .profilePagePicture{
+        display: flex;
+        border: 3px solid $blueColor;
+        border-radius: 50%;
+        position: relative;
+      }
+      .editIcon{
+        width: 35px;
+        height: 40px;
+      }
+      .profilePictureBtn{
+        border-radius: 50px;
+        border: 3px solid $blueColor;
+        position: relative;
+        left: 110px;
+        top: -50px;
+      }
+      .profilePicturesContainer{
+        width: 100%;
+        @extend %perfectCenter;
+        flex-wrap: wrap;
+        gap: 10px
+      }
+    }
+
+    .pseudoContainer{
+      @extend %perfectCenter;
+      flex-direction: column;
+      gap: 5px;
+      .editPseudo{
+        @extend %perfectCenter;
+        flex-direction: column;
+        gap: 10px;
+        input{
+          @include input($blueColor);
+        }
+        button:nth-child(1) {
+          @include button($orangeColor, $lightOrangeColor, 10px 20px,0 20px 0 0);
+        }
+        button:nth-child(2) {
+          @include button($orangeColor, $lightOrangeColor, 10px 20px);
+        }
+      }
+      .editPseudoBtn{
+        @include button($orangeColor, $lightOrangeColor, 10px 20px);
+      }
+    }
+    
+    .editPasswordContainer{
+      @extend %perfectCenter;
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+      input:nth-child(1){
+        @include input($blueColor);
+      }
+      input:nth-child(2){
+        @include input($blueColor);
+      }
+      input:nth-child(3){
+        @include input($blueColor);
+      }
+      button:nth-child(1){
+        @include button($orangeColor, $lightOrangeColor, 10px 20px, 0 20px 0 0);
+      }
+      button:nth-child(2){
+        @include button($orangeColor, $lightOrangeColor, 10px 20px);
+      }
+    }
+
+    .editPasswordBtn{
+      @include button($orangeColor, $lightOrangeColor, 10px 20px, 0);
+    }
+
+    .disconectBtn{
+      @include button($redColor, $lightRedColor, 15px 30px);
+    }
+  }
+
+  @media screen and (max-width: $mediaTablet) {
+    .profileContainer {
+      width: 70%;
+    }
+  }
+
+  @media screen and (max-width: $mediaMobile) {
+    .profileContainer {
+      width: 90%;
+      p{
+        text-align: center;
+      }
+      .pseudoContainer{
+        margin-top: 20px;
+        .editPseudo{
+          text-align: center;
+          input{
+            font-size: 1.2rem;
+          }
+          button:nth-child(1) {
+            @include button($orangeColor, $lightOrangeColor, 10px 20px,0 10px 10px 0);
+          }
+          button:nth-child(2) {
+            @include button($orangeColor, $lightOrangeColor, 10px 20px,0 10px 0 0);
+          }
+        }
+        .editPseudoBtn{
+          width: 80%;
+        }
+      }
+      
+      .editPasswordContainer{
+        text-align: center;
+        input:nth-child(1){
+          font-size: 1.2rem;
+        }
+        input:nth-child(2){
+          font-size: 1.2rem;
+        }
+        input:nth-child(3){
+          font-size: 1.2rem;
+        }
+        button:nth-child(1){
+          @include button($orangeColor, $lightOrangeColor, 10px 20px);
+        }
+      }
+  
+      .editPasswordBtn{
+        width: 80%;
+        max-width: 200px;
+      }
+    }
+  }
+

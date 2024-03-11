@@ -1,0 +1,13 @@
+@import "../../../style/variables/variables.scss";
+
+.adminBanwordContainer {
+  width: 40%;
+  @extend %adminArray;
+
+  th:first-child, td:first-child {
+      width: 60%;
+  }
+  th:nth-child(2), td:nth-child(2) {
+      width: 40%;
+  }
+}
