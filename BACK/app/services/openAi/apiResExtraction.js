@@ -32,7 +32,7 @@ export default function extractGenerationToJson(response) {
         };
       });
     } else {
-      throw new Error('Erreur dans la génération du quiz', 500);
+      throw new Error('Erreur dans la génération du quiz 2', 500);
     }
 
     return newQuiz;

@@ -1,7 +1,7 @@
 @import "../../style/variables/variables.scss";
 
 .quizIaContainer {
-  @include customContainer(40%, 90%, space-evenly);
+  @include customContainer(40%, 80%, space-evenly);
   background-color: $lightBlueColor;
   border: 3px solid $blueColor;
   color: $whiteColor;

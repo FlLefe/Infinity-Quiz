@@ -37,14 +37,10 @@ export default async function requestApi(params) {
       max_tokens: 1000,
       temperature: 0,
     });
-    console.log(JSON.stringify(completion.choices[0].message.content, null, 2));
-    console.log(completion.usage);
-    const quizFormated = await extractGenerationToJson(completion.choices[0].message.content);
-    console.log(JSON.stringify(quizFormated, null, 2));
-    if (completion.choices[0].message.content.length < 400) throw new APIError('Erreur lors de la génération du quiz', 500);
 
+    const quizFormated = await extractGenerationToJson(completion.choices[0].message.content);
     const stats = await responseStats(completion.usage);
-    console.log(stats);
+
     return { quizFormated, stats };
   } catch (error) {
     return new APIError('Erreur lors de la génération du quiz', 500);

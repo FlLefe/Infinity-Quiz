@@ -1,10 +1,9 @@
 @import "../../style/variables/variables.scss";
 
   .profileContainer {
-    @include customContainer(40%, 90%, space-between);
+    @include customContainer(40%, 80%, space-between);
     background-color: $lightBlueColor;
     border: 3px solid $blueColor;
-    padding: 50px 0;
     font-size: 1.5rem;
     box-sizing: border-box;
     overflow-y: auto;
@@ -45,6 +44,7 @@
       .profilePictureBtn{
         border-radius: 50px;
         border: 3px solid $blueColor;
+        background-color: $whiteColor;
         position: relative;
         left: 110px;
         top: -50px;
@@ -114,12 +114,15 @@
   @media screen and (max-width: $mediaTablet) {
     .profileContainer {
       width: 70%;
+      padding: 50px 0;
     }
   }
 
   @media screen and (max-width: $mediaMobile) {
     .profileContainer {
       width: 90%;
+      height: 90%;
+
       p{
         text-align: center;
       }

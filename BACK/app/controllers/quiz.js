@@ -166,6 +166,7 @@ export default {
 
       const { promptDecountError } = await userDatamapper.decountPromptToken(user_id);
       if (promptDecountError) return next(new APIError('Erreur dans le décompte des prompt tokens', 400));
+
       // Default parameters for the quiz
       const defaultParams = {
         nbQuestions: 10,
@@ -209,12 +210,11 @@ export default {
 
       // Validate request parameters and retrieve formatted quiz and statistics
       const validatedParams = { ...defaultParams, ...req.body };
-      const { quizFormated, stats, error: requestApiError } = await requestApi(validatedParams);
+      const { quizFormated, stats: quizStats, error: requestApiError } = await requestApi(validatedParams);
       if (requestApiError) return next(new APIError(requestApiError));
 
       // Add user ID to the statistics
-      if (!stats.user_id) return next(new APIError('Erreur lors de la génération du quiz', 500));
-      stats.user_id = user_id;
+      const stats = { ...quizStats, user_id };
 
       // Create statistics in the database
       const { error } = await statisticDatamapper.create(stats);

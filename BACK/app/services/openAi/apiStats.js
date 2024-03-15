@@ -32,6 +32,6 @@ export default function responseStats(data) {
 
     return callApiStats;
   } catch (error) {
-    throw new APIError('Une erreur est apparue pendant le calcul des statistiques', 500);
+    throw new APIError('Une erreur est survenue pendant le calcul des statistiques', 500);
   }
 }

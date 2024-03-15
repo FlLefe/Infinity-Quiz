@@ -2,14 +2,14 @@
 
 .QuizListSearchContainer {
     @extend %perfectCenter;
-    min-width: 600px;
     height:100px;
     position: relative;
+    width: 100%;
     .searchBar{
       font-size: 1.6rem;
       padding-left: 20px;
       height: 60px;
-      width: 75%;
+      width: 100%;
       border: 3px solid $pinkColor;
       border-radius: 10px;
       background-color: $lightPinkColor;

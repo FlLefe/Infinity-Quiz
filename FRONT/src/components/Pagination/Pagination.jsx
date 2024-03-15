@@ -2,7 +2,7 @@ import './Pagination.scss'
 
 export default function Pagination({ itemsPerPage, totalItems, currentPage, paginate }) {
   const pageNumbers = [];
-  const maxDisplayedPages = 5;
+  const maxDisplayedPages = 4;
   let startPage, endPage;
 
   if (totalItems / itemsPerPage <= maxDisplayedPages) {
