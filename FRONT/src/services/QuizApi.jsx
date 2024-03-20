@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:3001/v1';
+const API_BASE_URL = 'http://api.infinity-quiz.me/v1';
 
 async function handleResponse(response) {
   if (!response.ok) {
