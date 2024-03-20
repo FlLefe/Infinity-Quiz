@@ -162,10 +162,10 @@ export default {
       const { result: findUserResult, error: findUserError } = await userDatamapper.findById(user_id);
 
       if (findUserError) return next(new APIError('Utilisateur non trouvé', 400));
-      if (findUserResult.prompt === 0) return next(new APIError('Vous avez épuisé vos tokens', 423));
+      if (findUserResult.prompt === 0) return next(new APIError('Vous avez épuisé vos crédits', 423));
 
       const { promptDecountError } = await userDatamapper.decountPromptToken(user_id);
-      if (promptDecountError) return next(new APIError('Erreur dans le décompte des prompt tokens', 400));
+      if (promptDecountError) return next(new APIError('Erreur dans le décompte des crédits', 400));
 
       // Default parameters for the quiz
       const defaultParams = {

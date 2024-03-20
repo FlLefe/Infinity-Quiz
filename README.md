@@ -7,7 +7,7 @@
 - Set up the `.env` file
 - Run `npm run initDB` in the back folder
 - Run `npm run dev` in both the front and back folders
-- Open a browser on port 3000
+- Enjoy !
 
 ## Requirements Definition
 
@@ -118,67 +118,6 @@ Regarding the admin page, it will be possible to manage users to delete their ac
 
 ---
 
-### Planned Routes
-
-Back:
-
-| Method | Route              | Description                                        |
-| ------ | ------------------ | -------------------------------------------------- |
-| GET    | /user/profile      | retrieve user information                          |
-| PATCH  | /user/profile      | update a user profile                              |
-| GET    | /user/nickname     | retrieve all nicknames                             |
-| POST   | /user/signup       | create a user account                              |
-| POST   | /user/signin       | sign in to a user account                          |
-| -      | -                  | -                                                  |
-| GET    | /quiz/top          | list of the top 10 quizzes                         |
-| GET    | /quiz/top/:id      | retrieve a top 10 quiz by id                       |
-| GET    | /quiz/all          | list of all quizzes with score and rating (logged in)|
-| GET    | /quiz/:id          | retrieve a quiz (logged in)                        |
-| POST   | /quiz/score        | create a user's quiz score                         |
-| GET    | /quiz/score/all    | retrieve user's quiz scores                        |
-| PATCH  | /quiz/score/edit   | edit a user's score on a quiz                      |
-| POST   | /quiz/save         | save a quiz                                        |
-| PATCH  | /quiz/rate/:id     | modify a quiz rating                               |
-| POST   | /quiz/generate     | generate a quiz with the theme in the body         |
-| -      | -                  | -                                                  |
-| GET    | /admin/user/all    | list of users                                      |
-| GET    | /admin/user/:id    | retrieve a user                                    |
-| PATCH  | /admin/user/:id    | modify a user                                      |
-| DELETE | /admin/user/:id    | delete a user                                      |
-| GET    | /admin/quiz/all    | list of quizzes                                    |
-| GET    | /admin/quiz/:id    | display a quiz                                     |
-| PATCH  | /admin/quiz/:id    | modify a quiz                                      |
-| DELETE | /admin/quiz/:id    | delete a quiz                                      |
-| GET    | /admin/banword/all | list of banwords                                   |
-| GET    | /admin/banword/:id | retrieve a banword                                 |
-| POST   | /admin/banword     | add a banword                                      |
-| PATCH  | /admin/banword/:id | modify a banword                                   |
-| DELETE | /admin/banword/:id | delete a banword                                   |
-
-Front:
-
-| Route        | Description                       |
-| ------------ | --------------------------------- |
-| /            | Home                              |
-| /quiz/top/:id| Launch a topQuiz By id            |
-| /quiz/all    | Quiz referencing page             |
-| /quiz/:id    | Launch a quiz by id               |
-| /quiz/generate| Quiz generation by AI            |
-| /signin      | Signin page                       |
-| /login       | Login page                        |
-| /profile     | Account management page           |
-| /admin       | Admin Page - Statistics           |
-| /admin/quiz  | Admin Page - Quiz management      |
-| /admin/quiz/:id| Admin Page - Edit quiz          |
-| /admin/user  | Admin Page - User management      |
-| /admin/user/:id  | Admin Page - Edit user        |
-| /admin/banword | Admin Page - Banword management |
-| /admin/banword/:id | Admin Page - Edit banword   |
-| /about       | About page                        |
-| /softban     | Rate limited page                 |
-
----
-
 ### User Stories
 
 | As a          | I want to                                         | So that                                   |
@@ -210,6 +149,5 @@ Front:
 
 ### Roles of Each Team Member
 
-    - Guillaume Comparet: Product Owner / Scrum Master
-    - Matthieu Coutant: Lead front-end developer
-    - Florian Lefebvre: Lead back-end developer / Technical references: git
+    - Guillaume Comparet: Product Owner / Technical references: git
+    - Florian Lefebvre: Lead back-end developer / Scrum Master

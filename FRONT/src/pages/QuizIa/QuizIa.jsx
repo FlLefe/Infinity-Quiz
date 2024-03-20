@@ -12,7 +12,6 @@ export default function QuizIa() {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
   const [quizData, setQuizData] = useState(null);
   const [inputData, setInputData] = useState({
     difficulty: "Facile",
@@ -51,14 +50,12 @@ export default function QuizIa() {
     } catch (error) {
       if (error.status === 401) {
         handleLogout();
-      } else if (error.status === 423) {
-        toast.warn("Vous avez consommé tous vos token");
-      } else if (error.status === 403) {
-        toast.warn(error.message); {/* Error if the user try to generate with a banword */}
+      } else if (error.status === 423 || error.status === 403) {
+        toast.warn(error.message);
       } else if (error.status === 429) {
         navigate("/softban");
       } else {
-        setError(error);
+        toast.error(error.message);
       }
     } finally {
       setLoading(false);
@@ -67,10 +64,6 @@ export default function QuizIa() {
 
   if (loading) {
     return <LoadingSpinner />;
-  }
-
-  if (error) {
-    return <p>Nous sommes désolé une erreur est survenue</p>;
   }
 
   {/* Return when the quiz has been generated, some details about him */}

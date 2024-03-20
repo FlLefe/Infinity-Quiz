@@ -13,7 +13,8 @@ export default function QuizList() {
   const { userData } = useContext(AuthContext);
   const { data, loading, error } = useFetch(getAllQuiz, userData.token);
   const [filteredDataList, setFilteredDataList] = useState([]);
-  const [activeFilters, setActiveFilters] = useState([]);
+  const [difficultyCheckBox, setDifficultyCheckBox] = useState(null);
+  const [scoreCheckBox, setScoreCheckBox] = useState(null);
 
   // number of quiz per page
   const itemsPerPage = 8;
@@ -25,15 +26,21 @@ export default function QuizList() {
     }
   }, [data]);
 
-  const handleFilterChange = (isChecked, filterType) => {
-    let updatedFilters = [...activeFilters];
-    if (isChecked) {
-      updatedFilters.push(filterType);
-    } else {
-      updatedFilters = updatedFilters.filter(filter => filter !== filterType);
+  function handleDifficultyChange(difficulty){
+    if(difficulty !== difficultyCheckBox){
+      setDifficultyCheckBox(difficulty)
+    }else {
+      setDifficultyCheckBox(null)
     }
-    setActiveFilters(updatedFilters);
-  };
+  }
+
+  function handleScoreChange(score){
+    if(score !== scoreCheckBox){
+      setScoreCheckBox(score)
+    }else {
+      setScoreCheckBox(null)
+    }
+  }
 
   const { currentPage, currentItems, paginate } = usePagination(filteredDataList, itemsPerPage);
 
@@ -53,41 +60,47 @@ export default function QuizList() {
           setFilteredDataList={setFilteredDataList}
           paginate={paginate}
           searchKey="theme"
-          activeFilters={activeFilters}
+          difficultyFilter={difficultyCheckBox}
+          scoreFilter={scoreCheckBox}
         />
         <div className='checkboxContainer'>
         <label>
                   <input
                     type='checkbox'
-                    onChange={(e) => handleFilterChange(e.target.checked, "withScore")}
+                    checked={scoreCheckBox === "withScore"}
+                    onChange={() => handleScoreChange("withScore")}
                   />
                   Quiz déjà réalisés
                 </label>
                 <label>
                   <input
                     type='checkbox'
-                    onChange={(e) => handleFilterChange(e.target.checked, "withoutScore")}
+                    checked={scoreCheckBox === "withoutScore"}
+                    onChange={() => handleScoreChange("withoutScore")}
                   />
                   Quiz jamais réalisés
                 </label>
                 <label>
                   <input
+                    checked={difficultyCheckBox === "Facile"}
                     type='checkbox'
-                    onChange={(e) => handleFilterChange(e.target.checked, "easy")}
+                    onChange={() => handleDifficultyChange("Facile")}
                   />
                   Facile
                 </label>
                 <label>
                   <input
+                    checked={difficultyCheckBox === "Moyen"}
                     type='checkbox'
-                    onChange={(e) => handleFilterChange(e.target.checked, "medium")}
+                    onChange={() => handleDifficultyChange("Moyen")}
                   />
                   Moyen
                 </label>
                 <label>
                   <input
+                    checked={difficultyCheckBox === "Difficile"}
                     type='checkbox'
-                    onChange={(e) => handleFilterChange(e.target.checked, "difficult")}
+                    onChange={() => handleDifficultyChange("Difficile")}
                   />
                   Difficile
                 </label>
